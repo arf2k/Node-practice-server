@@ -1,20 +1,30 @@
+const path = require("path")
 const express = require("express")
+
+const publicDir = (path.join(__dirname, "../public"))
 
 const app = express() 
 
+app.use(express.static(publicDir))
+
 app.get('', (req, res ) => {
-res.send("Sup")
+res.send("<h1>Sup with you?</h1>")
 })
 
 //get method takes route (partial url) and function describing what you want to do when they visit it 
 //send - reply 
+
 
 app.get("/help", (req, res) => {
      res.send("Help me!!!")
 })
 
 app.get("/about", (req, res) => {
-     res.send("Check out this about page!")
+     // res.send("Check out this about page!")
+     res.send({
+          name: "Alex",
+          age: 31
+     })
 })
 
 app.get("/weather", (req, res) => {
