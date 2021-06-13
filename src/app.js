@@ -7,8 +7,8 @@ const app = express()
 
 app.use(express.static(publicDir))
 
-app.get('', (req, res ) => {
-res.send("<h1>Sup with you?</h1>")
+app.get("/", (req, res ) => {
+res.send("<h1>Hi, thanks for visiting!</h1>")
 })
 
 //get method takes route (partial url) and function describing what you want to do when they visit it 
