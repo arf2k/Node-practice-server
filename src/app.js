@@ -16,7 +16,10 @@ app.get("", (req, res) => {
 })
 
 app.get("/about", (req, res) => {
-res.render("about")
+res.render("about", {
+     title: "About Xan page",
+     name: "Xanman"
+})
 })
 
 
@@ -29,16 +32,12 @@ res.send("<h1>Hi, thanks for visiting!</h1>")
 
 
 app.get("/help", (req, res) => {
-     res.send("Help me!!!")
-})
-
-app.get("/about", (req, res) => {
-     // res.send("Check out this about page!")
-     res.send({
-          name: "Alex",
-          age: 31
+     res.render("help", {
+          helptext: "Helpity help help"
      })
 })
+
+
 
 app.get("/weather", (req, res) => {
      res.send("Weatherpage")
